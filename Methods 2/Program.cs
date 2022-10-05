@@ -29,14 +29,45 @@ namespace Methods_2
 
             ShowHUD(); // usage
 
+            // earn points
+            score = score + 50;
+            // get hurt
+            health = health - 25;
+
+            ShowHUD(); // usage
+
+            // earn points
+            score = score + 0;
+            // get hurt
+            health = health - 5;
+
+            ShowHUD();
+
+            Heal(5);
+
+            ShowHUD();
+
+            FullRestore();
+
+            ShowHUD();
+
             Console.ReadKey(true);
         }
         static void ShowHUD() // declaration
         {
             // display HUD
+            Console.WriteLine("~~~~~~~~~~");
             Console.WriteLine("Score: " + score);
             Console.WriteLine("Health: " + health);
             Console.WriteLine();
+        }
+        static void FullRestore()
+        {
+            health = 100;
+        }
+        static void Heal(int healamount)
+        {
+            health = health + healamount;
         }
     }
 }
